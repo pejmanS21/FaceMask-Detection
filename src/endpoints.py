@@ -23,7 +23,7 @@ settings = init()
 
 
 '''----- HAS_CORS=True -----'''
-## allow_access_origin = *
+# allow_access_origin = *
 origins = ['*']
 
 app.add_middleware(
@@ -33,6 +33,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
+
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
@@ -70,14 +71,13 @@ async def process(output_type: str, image: UploadFile = File(...)):
 
     result = setup['face_detector'].detect_faces(image, is_rgb=False)
 
-    if result['boxes'] == []:
+    if not result['boxes']:
         # logger.error('0 Face Detected!')
         print('0 Face Detected!')
     else:
         image = Box.put_box(image, result.boxes, color=(255, 0, 0))
         boxes = box_modifier(image, result)
         image = draw_write_image(image, boxes)
-
 
     if output_type == "bytes" or output_type == "1":
 

@@ -15,7 +15,7 @@ image = cv2.imread(imagePath)
 
 result = setup['face_detector'].detect_faces(image, is_rgb=False)
 
-if result['boxes'] == []:
+if not result['boxes']:
     logger.error('0 Face Detected!')
 else:
     image = Box.put_box(image, result.boxes, color=(255, 0, 0))
@@ -23,7 +23,6 @@ else:
     boxes = box_modifier(image, result)
     logger.info(f'Number of detected faces={len(boxes)}')
 
-
     image = draw_write_image(image, boxes)
-    Image.fromarray(image[...,::-1]).show() # convert to rgb and show image
+    Image.fromarray(image[..., ::-1]).show()  # convert to rgb and show image
 
