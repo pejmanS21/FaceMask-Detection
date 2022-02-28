@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>fastapi server</title>
+    <style>
+    mark {
+        background-color: rgb(233, 227, 227);
+        color: red;
+      }
+    </style>
+</head>
+<body>
+    <h2>Check here:</h2><br>
+    <center>
+           <h4>http://0.0.0.0:8000/docs</h4><br>
+    </center>
+    <h2>Send Request</h2>
+    <p>You can send a post request to get predictions, instead of checking <mark>/docs</mark> endpoint.<br>
+    simply by using following command to send a POST request!<br>
+    <mark>Note</mark>: Don't forget to change image path
+    </p>
+    <pre>
+        <code>
+curl -v http://0.0.0.0:8000/process/saved -F image=@/path/to/image
+        </code>
+      </pre>
+      
+</body>
+</html>
