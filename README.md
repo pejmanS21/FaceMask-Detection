@@ -20,4 +20,8 @@ or
     ./get_weights.sh 
 
 
+## docker-compose
+
+    sudo docker-compose up --build -d
+
 # Code Not COMPLETE yet!
