@@ -1,0 +1,4 @@
+[core]
+    remote = facemask_remote
+['remote "facemask_remote"']
+    url = gdrive://1LXNz70KD3plYtTxYU8rs93gij37mzY8Y

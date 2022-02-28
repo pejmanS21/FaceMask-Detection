@@ -1,0 +1,4 @@
+outs:
+- md5: 985bb15d433ca117b931bc4a3d9a06d8
+  size: 19384285
+  path: face_mask_detection_checkpoint.pth
