@@ -62,7 +62,7 @@ def pil_preparation(frame, transform=transformer):
     return pil_frame
 
 
-def draw_write_image(image, boxes, img_size=(224, 224)):
+def draw_write_image(image, boxes, model=model, img_size=(224, 224)):
     """draw box around faces and write that it has mask or not
 
     Args:
