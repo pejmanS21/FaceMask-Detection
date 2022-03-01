@@ -9,7 +9,7 @@ from inc.utility.func import draw_write_image, box_modifier
 
 logger = get_logger(name='image', log_path='../logs/runtime.log', )
 
-imagePath = '../images/img.jpeg'
+imagePath = '../images/image1.jpeg'
 image = cv2.imread(imagePath)
 
 
