@@ -11,7 +11,7 @@ stats = (0.5,), (0.5,)
 
 model_path = '../models/face_mask_detection_checkpoint.pth'
 
-model = FaceMask_Detection(3, 32, 2)
+model = FaceMask_Detection(3, 32, 2).to(device)
 model.eval()
 model.load_state_dict(torch.load(model_path, map_location=device))
 
